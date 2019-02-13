@@ -9,6 +9,8 @@ import {
 
 const isAndroid = Platform.OS === 'android';
 
+import Communication from './Communication';
+
 export default class CommunicationExample extends Component {
 
 
@@ -23,7 +25,7 @@ export default class CommunicationExample extends Component {
                 <Button title={'调用原生组件'} onPress={() => {
                     if (isAndroid) {
                         //调用Android平台接口
-                        NativeModules.Communication.startActivityFromReactNative('12345');
+                        Communication.startActivityFromReactNative('12345');
                     }
                 }}/>
             </View>
