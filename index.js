@@ -9,3 +9,4 @@ import RCTButtonExample from './src/AndroidNativeComponentExample/RCTButtonExamp
 import CustomTextViewExample from './src/AndroidNativeComponentExample/CustomTextViewExample';
 
 AppRegistry.registerComponent(appName, () => RCTButtonExample);
+//AppRegistry.registerComponent(appName, () => CustomTextViewExample);

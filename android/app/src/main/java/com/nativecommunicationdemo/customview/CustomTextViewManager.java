@@ -2,11 +2,16 @@ package com.nativecommunicationdemo.customview;
 
 
 import android.graphics.Color;
+import android.view.View;
 import android.widget.TextView;
 
+import com.facebook.react.bridge.Arguments;
+import com.facebook.react.bridge.ReactContext;
+import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.uimanager.SimpleViewManager;
 import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.annotations.ReactProp;
+import com.facebook.react.uimanager.events.RCTEventEmitter;
 
 /**
  * 2019-02-15
@@ -46,6 +51,19 @@ public class CustomTextViewManager extends SimpleViewManager<TextView> {
     protected TextView createViewInstance(ThemedReactContext reactContext) {
         this.mContext = reactContext;
         mTextView = new TextView(reactContext);
+        //注册点击事件
+        mTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                WritableMap event = Arguments.createMap();
+                event.putString("message", "MyMessage哈哈哈--自定义");
+                ReactContext reactContext = (ReactContext)mTextView.getContext();
+                reactContext.getJSModule(RCTEventEmitter.class).receiveEvent(
+                        mTextView.getId(),
+                        "topChange",
+                        event);
+            }
+        });
         return mTextView;
     }
 

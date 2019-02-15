@@ -1,11 +1,20 @@
 package com.nativecommunicationdemo.customview;
 
 
+import android.view.View;
 import android.widget.Button;
 
+import com.facebook.react.bridge.Arguments;
+import com.facebook.react.bridge.WritableMap;
+import com.facebook.react.common.MapBuilder;
 import com.facebook.react.uimanager.SimpleViewManager;
 import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.annotations.ReactProp;
+import com.facebook.react.uimanager.events.RCTEventEmitter;
+
+import java.util.Map;
+
+import javax.annotation.Nullable;
 
 /**
  * 2019-02-15
@@ -25,6 +34,12 @@ public class RCTButtonManager extends SimpleViewManager<Button> {
     private Button mButton;
 
 
+    private static final String EVENT_NAME_ONCLICK_NATIVE = "nativeClick";
+    private static final String EVENT_NAME_ONCLICK_JS = "jsClick";
+
+    private static final String EVENT_NAME_ONCLICK = "onClick";
+
+
     /**
      * getName方法返回的名字会用于在 JavaScript 端引用。
      *
@@ -42,10 +57,30 @@ public class RCTButtonManager extends SimpleViewManager<Button> {
      * @return
      */
     @Override
-    protected Button createViewInstance(ThemedReactContext reactContext) {
+    protected Button createViewInstance(final ThemedReactContext reactContext) {
         this.mContext = reactContext;
         mButton = new Button(reactContext);
+        mButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                WritableMap data = Arguments.createMap();
+                data.putString("msg", "点击按钮");
+
+                reactContext.getJSModule(RCTEventEmitter.class).receiveEvent(
+                        mButton.getId(),
+                        EVENT_NAME_ONCLICK,
+                        data
+                );
+            }
+        });
         return mButton;
+    }
+
+    @Nullable
+    @Override
+    public Map getExportedCustomDirectEventTypeConstants() {
+        return MapBuilder.of(
+                EVENT_NAME_ONCLICK, MapBuilder.of("registrationName", EVENT_NAME_ONCLICK));
     }
 
     /**
