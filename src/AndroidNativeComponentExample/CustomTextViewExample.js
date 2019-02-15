@@ -9,7 +9,7 @@ import {
 
 const isAndroid = Platform.OS === 'android';
 
-import Communication from './Communication';
+import RCTText from './CustomText';
 
 export default class CommunicationExample extends Component {
 
@@ -22,13 +22,13 @@ export default class CommunicationExample extends Component {
 
         return (
             <View style={styles.container}>
-                <Button title={'调用原生组件'} onPress={() => {
-                    if (isAndroid) {
-                        //调用Android平台接口
-                        //Communication.startActivityFromReactNative('12345');
-                        NativeModules.Communication.startActivityFromReactNative('12345');
-                    }
-                }}/>
+                <RCTText
+                    style={styles.myTextView}
+                    text="我是封装的原生组件"
+                    textSize={16}
+                    onChangeMessage={(msg) => {
+                        alert('点击事件');
+                    }}/>
             </View>
         )
     }
@@ -41,5 +41,12 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-    }
+    },
+    myTextView: {
+        //flex: 1,
+        alignSelf: 'center',
+        width: 200,
+        height: 300,
+        backgroundColor: 'pink',
+    },
 });

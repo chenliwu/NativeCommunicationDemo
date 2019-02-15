@@ -9,7 +9,7 @@ import {
 
 const isAndroid = Platform.OS === 'android';
 
-import Communication from './Communication';
+import RCTButton from './RCTButton';
 
 export default class CommunicationExample extends Component {
 
@@ -22,13 +22,14 @@ export default class CommunicationExample extends Component {
 
         return (
             <View style={styles.container}>
-                <Button title={'调用原生组件'} onPress={() => {
-                    if (isAndroid) {
-                        //调用Android平台接口
-                        //Communication.startActivityFromReactNative('12345');
-                        NativeModules.Communication.startActivityFromReactNative('12345');
-                    }
-                }}/>
+                <RCTButton
+                    style={{
+                        width: 200,
+                        height: 300,
+                        backgroundColor: 'pink',
+                    }}
+                    text={'Android原生组件'}
+                />
             </View>
         )
     }

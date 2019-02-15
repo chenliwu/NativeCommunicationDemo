@@ -7,6 +7,8 @@ import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
+import com.nativecommunicationdemo.mypackage.RCTButtonPackage;
+import com.nativecommunicationdemo.mypackage.CustomTextViewPackage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -24,7 +26,9 @@ public class MainApplication extends Application implements ReactApplication {
             //在这里注册Communication模块
             return Arrays.<ReactPackage>asList(
                     new MainReactPackage(),
-                    new Communication()
+                    new Communication(),
+                    new RCTButtonPackage(),
+                    new CustomTextViewPackage()
             );
         }
 
