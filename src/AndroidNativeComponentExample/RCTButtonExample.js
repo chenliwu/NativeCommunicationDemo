@@ -29,8 +29,10 @@ export default class CommunicationExample extends Component {
                         backgroundColor: 'pink',
                     }}
                     text={'Android原生组件'}
-                    onClick={(msg) => {
-                        alert(msg);
+                    onClick={(event) => {
+                        console.log(event);
+                        console.log(event.nativeEvent);
+                        alert(event);
                     }}
                 />
             </View>
