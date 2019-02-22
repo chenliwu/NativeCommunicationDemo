@@ -22,14 +22,16 @@ class RCTButtonComponent extends Component {
         if (!this.props.onClick) {
             return;
         }
+        console.log('');
+        console.log('_onClick');
+        console.log(event.nativeEvent);
         //取出android层回调的数据：event.nativeEvent.key名称
-        alert(event.nativeEvent.backMsg);
         this.props.onClick(event.nativeEvent.backMsg);
     }
 
     render() {
         return <RCTButton
-            onClick={this._onClick.bind(this)}
+            //onClick={this._onClick.bind(this)}
             {...this.props}
         />
     }

@@ -11,7 +11,11 @@ const isAndroid = Platform.OS === 'android';
 
 import RCTText from './CustomText';
 
-export default class CommunicationExample extends Component {
+export default class CustomTextViewExample extends Component {
+
+    static navigationOptions = {
+        headerTitle: 'Android-Text文本组件',
+    };
 
 
     constructor(props, context) {

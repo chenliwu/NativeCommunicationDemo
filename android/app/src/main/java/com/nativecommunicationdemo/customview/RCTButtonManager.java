@@ -33,10 +33,9 @@ public class RCTButtonManager extends SimpleViewManager<Button> {
 
     private Button mButton;
 
-
-    private static final String EVENT_NAME_ONCLICK_NATIVE = "nativeClick";
-    private static final String EVENT_NAME_ONCLICK_JS = "jsClick";
-
+    /**
+     * RN组件的props回调事件名称
+     */
     private static final String EVENT_NAME_ONCLICK = "onClick";
 
 
@@ -65,7 +64,9 @@ public class RCTButtonManager extends SimpleViewManager<Button> {
             public void onClick(View view) {
                 WritableMap data = Arguments.createMap();
                 data.putString("msg", "点击按钮");
+                data.putString("data", "Android传递给JS的数据");
 
+                //Android向JS传递事件
                 reactContext.getJSModule(RCTEventEmitter.class).receiveEvent(
                         mButton.getId(),
                         EVENT_NAME_ONCLICK,

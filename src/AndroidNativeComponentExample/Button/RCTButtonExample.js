@@ -13,6 +13,10 @@ import RCTButton from './RCTButton';
 
 export default class CommunicationExample extends Component {
 
+    static navigationOptions = {
+        headerTitle: 'Android-Button组件',
+    };
+
 
     constructor(props, context) {
         super(props, context);
@@ -25,14 +29,15 @@ export default class CommunicationExample extends Component {
                 <RCTButton
                     style={{
                         width: 200,
-                        height: 300,
+                        height: 100,
                         backgroundColor: 'pink',
                     }}
                     text={'Android原生组件'}
                     onClick={(event) => {
-                        console.log(event);
+                        console.log('');
+                        console.log('_onClick');
                         console.log(event.nativeEvent);
-                        alert(event);
+                        alert(event.nativeEvent.msg);
                     }}
                 />
             </View>
