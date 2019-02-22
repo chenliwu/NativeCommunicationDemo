@@ -14,6 +14,7 @@ import {
 import RCTButtonExample from './Button/RCTButtonExample';
 import MyDialogExample from './Dialog/MyDialogExample';
 import CustomTextViewExample from './Text/CustomTextViewExample';
+import TestDialogUtilsExample from './Dialog/TestDialogUtilsExample';
 
 
 class AndroidNativeNavigatorPage extends React.Component {
@@ -39,6 +40,10 @@ class AndroidNativeNavigatorPage extends React.Component {
         dataList.push({
             id: 'MyDialogExample',
             name: '调用Android对话框'
+        });
+        dataList.push({
+            id: 'TestDialogUtilsExample',
+            name: '测试Android对话框工具类'
         });
 
 
@@ -127,6 +132,9 @@ const AnimationStudyNavigator = createStackNavigator(
         },
         MyDialogExample: {
             screen: MyDialogExample
+        },
+        TestDialogUtilsExample: {
+            screen: TestDialogUtilsExample
         },
 
 
