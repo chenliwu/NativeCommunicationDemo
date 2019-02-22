@@ -16,8 +16,6 @@ export default class MyDialogExample extends Component {
         headerTitle: '调用Android对话框',
     };
 
-    onConfirmPasswordListener = null;
-
 
     constructor(props, context) {
         super(props, context);
@@ -31,18 +29,26 @@ export default class MyDialogExample extends Component {
         this.removeOnConfirmPasswordListener();
     }
 
+    /**
+     * 添加Android发送来的事件
+     */
     addOnConfirmPasswordListener = () => {
         //监听Android发送的事件
-        this.onConfirmPasswordListener = DeviceEventEmitter.addListener('onConfirmPassword', (params) => {
-            // handle event.
-            console.log('onConfirmPassword');
-            console.log(params);
-            NativeModules.MyDialogModule.showDialog('提示信息', '输入的密码：' + params.password);
-        });
+        DeviceEventEmitter.addListener('onConfirmPassword', this.onConfirmPasswordListener);
     };
 
+    /**
+     * 移除监听
+     */
     removeOnConfirmPasswordListener = () => {
-        this.onConfirmPasswordListener && DeviceEventEmitter.removeListener("onConfirmPassword");
+        DeviceEventEmitter.removeListener("onConfirmPassword", this.onConfirmPasswordListener);
+    };
+
+    onConfirmPasswordListener = (params) => {
+        // handle event.
+        console.log('onConfirmPassword');
+        console.log(params);
+        NativeModules.MyDialogModule.showDialog('提示信息', '输入的密码：' + params.password);
     };
 
     render() {
