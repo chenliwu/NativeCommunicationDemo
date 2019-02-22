@@ -42,7 +42,7 @@ export default class MyDialogExample extends Component {
     };
 
     removeOnConfirmPasswordListener = () => {
-        this.onConfirmPasswordListener && this.DeviceEventEmitter.removeAllListeners("onConfirmPassword");
+        this.onConfirmPasswordListener && DeviceEventEmitter.removeListener("onConfirmPassword");
     };
 
     render() {
