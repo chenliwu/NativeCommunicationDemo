@@ -1,4 +1,4 @@
-package com.nativecommunicationdemo;
+package com.nativecommunicationdemo.mymodule;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -7,6 +7,7 @@ import com.facebook.react.bridge.JSApplicationIllegalArgumentException;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
+import com.nativecommunicationdemo.CommunicationActivity;
 
 public class CommunicationModule extends ReactContextBaseJavaModule {
 
@@ -27,7 +28,7 @@ public class CommunicationModule extends ReactContextBaseJavaModule {
      */
     @Override
     public String getName() {
-        return "Communication";
+        return "CommunicationPackage";
     }
 
     /**

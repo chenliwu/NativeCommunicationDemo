@@ -10,7 +10,9 @@ import {
     createStackNavigator
 } from 'react-navigation';
 
+//2019-02-22
 import RCTButtonExample from './Button/RCTButtonExample';
+import MyDialogExample from './Dialog/MyDialogExample';
 import CustomTextViewExample from './Text/CustomTextViewExample';
 
 
@@ -33,6 +35,10 @@ class AndroidNativeNavigatorPage extends React.Component {
         dataList.push({
             id: 'CustomTextViewExample',
             name: 'Text文本组件通讯example'
+        });
+        dataList.push({
+            id: 'MyDialogExample',
+            name: '调用Android对话框'
         });
 
 
@@ -118,6 +124,9 @@ const AnimationStudyNavigator = createStackNavigator(
 
         CustomTextViewExample: {
             screen: CustomTextViewExample
+        },
+        MyDialogExample: {
+            screen: MyDialogExample
         },
 
 
