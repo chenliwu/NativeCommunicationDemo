@@ -3,7 +3,11 @@ import {
     DeviceEventEmitter
 } from 'react-native';
 
-
+/**
+ * 2019-02-23
+ * chenlw
+ * 封装Android原生对话框工具类
+ */
 class AndroidDialog {
 
     static callback;
