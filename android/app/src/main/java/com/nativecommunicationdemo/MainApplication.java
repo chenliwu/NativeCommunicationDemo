@@ -7,7 +7,7 @@ import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
-import com.nativecommunicationdemo.mymodule.MyDialogPackage;
+import com.nativecommunicationdemo.mypackage.MyDialogPackage;
 import com.nativecommunicationdemo.mypackage.CommunicationPackage;
 import com.nativecommunicationdemo.mypackage.RCTButtonPackage;
 import com.nativecommunicationdemo.mypackage.CustomTextViewPackage;
@@ -30,8 +30,8 @@ public class MainApplication extends Application implements ReactApplication {
                     new MainReactPackage(),
                     new CommunicationPackage(),
                     new RCTButtonPackage(),
-                    new CustomTextViewPackage(),
-                    new MyDialogPackage()
+                    new CustomTextViewPackage()
+                    //new MyDialogPackage()
             );
         }
 
