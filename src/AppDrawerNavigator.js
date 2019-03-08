@@ -13,6 +13,8 @@ import {
 
 import AndroidNativeNavigator from './AndroidNativeComponentExample/AndroidNativeNavigator';
 
+import IOSNativeNavigator from './IOSCommunicationExample/IOSNativeNavigator';
+
 
 class AppNavigatorPage extends Component {
 
@@ -57,6 +59,12 @@ export default createDrawerNavigator(
             screen: AndroidNativeNavigator,
             navigationOptions: {
                 drawerLabel: "Android平台通信",
+            }
+        },
+        IOSNativeNavigator: {
+            screen: IOSNativeNavigator,
+            navigationOptions: {
+                drawerLabel: "IOS平台通信",
             }
         },
 
