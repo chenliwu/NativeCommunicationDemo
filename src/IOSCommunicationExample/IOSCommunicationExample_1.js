@@ -9,6 +9,8 @@ import {
 
 const isAndroid = Platform.OS === 'android';
 
+const isIOS = Platform.OS === 'ios';
+
 export default class CommunicationExample extends Component {
 
 
@@ -21,7 +23,7 @@ export default class CommunicationExample extends Component {
         return (
             <View style={styles.container}>
                 <Button title={'调用原生组件'} onPress={() => {
-                    if (!isAndroid) {
+                    if (isIOS) {
                         NativeModules.IOSCommunication.prsentViewControllerFromReactNative('123456');
                     }
                 }}/>

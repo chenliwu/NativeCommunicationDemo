@@ -20,7 +20,7 @@ RCT_EXPORT_MODULE();
   return dispatch_get_main_queue();
 }
 
-//到处一个名称为prsentViewControllerFromReactNative的方法给React Native使用。
+//导出一个名称为prsentViewControllerFromReactNative的方法给React Native使用。
 RCT_EXPORT_METHOD(prsentViewControllerFromReactNative:(NSString*)params){
   NSLog(@"React Native传递的参数：%@",params);
   IOSCommunicationViewController *communicationViewController=[[IOSCommunicationViewController alloc]init];
@@ -28,7 +28,6 @@ RCT_EXPORT_METHOD(prsentViewControllerFromReactNative:(NSString*)params){
   
   AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
 //  UIViewController *rootViewController = (UIViewController *)[[app.window] rootViewController];
-  
   //获取根视图控制器
   UIViewController *rootViewController = app.window.rootViewController;
   //跳转到RN通信的页面
