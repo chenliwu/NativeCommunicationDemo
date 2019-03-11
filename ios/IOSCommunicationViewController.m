@@ -54,7 +54,8 @@
 //按钮的响应事件
 - (void)buttonOnClicked:(UIButton *)button{
   //dismissViewControllerAnimated关闭页面
-  [self dismissViewControllerAnimated:YES completion:nil];
+  //[self dismissViewControllerAnimated:YES completion:nil];
+  [self.navigationController popViewControllerAnimated:YES];
 }
 
 /*

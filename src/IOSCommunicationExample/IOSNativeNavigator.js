@@ -12,6 +12,7 @@ import {
 
 
 import IOSCommunicationExample_1 from './IOSCommunicationExample_1';
+import DeviceInfoExample from './DeviceInfo/DeviceInfoExample';
 
 class IOSNativeNavigatorPage extends React.Component {
 
@@ -28,6 +29,10 @@ class IOSNativeNavigatorPage extends React.Component {
         dataList.push({
             id: 'IOSCommunicationExample_1',
             name: 'IOS原生平台通信example'
+        });
+        dataList.push({
+            id: 'DeviceInfoExample',
+            name: 'IOS原生平台通信-获取设备信息'
         });
 
 
@@ -110,6 +115,9 @@ const AnimationStudyNavigator = createStackNavigator(
 
         IOSCommunicationExample_1: {
             screen: IOSCommunicationExample_1
+        },
+        DeviceInfoExample: {
+            screen: DeviceInfoExample
         },
 
 
