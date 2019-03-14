@@ -4,19 +4,26 @@ import {
     StyleSheet,
     Button,
     Platform,
-    NativeModules
+    NativeModules,
+    DeviceEventEmitter
 } from 'react-native';
 
 const isAndroid = Platform.OS === 'android';
 
-import Communication from './Communication';
-
-export default class CommunicationExample extends Component {
+export default class AndroidCommunicationExample extends Component {
 
 
     constructor(props, context) {
         super(props, context);
     }
+
+    componentWillMount(): void {
+        DeviceEventEmitter.addListener("onCloseActivity",this.onCloseActivity);
+    }
+
+    onCloseActivity=()=>{
+        NativeModules.CommunicationModule.closeActivity();
+    };
 
     render() {
 
@@ -26,11 +33,16 @@ export default class CommunicationExample extends Component {
                     if (isAndroid) {
                         //调用Android平台接口
                         //Communication.startActivityFromReactNative('12345');
-                        NativeModules.Communication.startActivityFromReactNative('12345');
+                        NativeModules.CommunicationModule.startActivityFromReactNative('12345');
                     }
                 }}/>
+
             </View>
         )
+    }
+
+    componentWillUnmount(): void {
+        DeviceEventEmitter.removeListener("onCloseActivity",this.onCloseActivity);
     }
 
 

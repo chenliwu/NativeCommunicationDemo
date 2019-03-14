@@ -12,6 +12,7 @@ import {
 } from 'react-navigation';
 
 import AndroidNativeNavigator from './AndroidNativeComponentExample/AndroidNativeNavigator';
+import AndroidCommunicationExample from './AndroidCommunicationExample/AndroidCommunicationExample';
 
 import IOSNativeNavigator from './IOSCommunicationExample/IOSNativeNavigator';
 
@@ -59,6 +60,12 @@ export default createDrawerNavigator(
             screen: AndroidNativeNavigator,
             navigationOptions: {
                 drawerLabel: "Android平台通信",
+            }
+        },
+        AndroidCommunicationExample: {
+            screen: AndroidCommunicationExample,
+            navigationOptions: {
+                drawerLabel: "Android与RN页面跳转",
             }
         },
         IOSNativeNavigator: {

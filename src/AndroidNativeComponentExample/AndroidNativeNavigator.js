@@ -16,6 +16,8 @@ import MyDialogExample from './Dialog/MyDialogExample';
 import CustomTextViewExample from './Text/CustomTextViewExample';
 import TestDialogUtilsExample from './Dialog/TestDialogUtilsExample';
 
+import CameraExample from './Camera/CameraExample';
+
 
 class AndroidNativeNavigatorPage extends React.Component {
 
@@ -44,6 +46,10 @@ class AndroidNativeNavigatorPage extends React.Component {
         dataList.push({
             id: 'TestDialogUtilsExample',
             name: '测试Android对话框工具类'
+        });
+        dataList.push({
+            id: 'CameraExample',
+            name: 'Android相机拍照'
         });
 
 
@@ -135,6 +141,9 @@ const AnimationStudyNavigator = createStackNavigator(
         },
         TestDialogUtilsExample: {
             screen: TestDialogUtilsExample
+        },
+        CameraExample: {
+            screen: CameraExample
         },
 
 

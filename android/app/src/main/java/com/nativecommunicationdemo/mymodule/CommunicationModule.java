@@ -2,16 +2,23 @@ package com.nativecommunicationdemo.mymodule;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.support.annotation.Nullable;
+import android.util.Log;
 
 import com.facebook.react.bridge.JSApplicationIllegalArgumentException;
 import com.facebook.react.bridge.ReactApplicationContext;
+import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
+import com.facebook.react.bridge.WritableMap;
+import com.facebook.react.modules.core.DeviceEventManagerModule;
 import com.nativecommunicationdemo.CommunicationActivity;
 
 public class CommunicationModule extends ReactContextBaseJavaModule {
 
-    private ReactApplicationContext mReactContext;
+    private final static String TAG = "COMMUNICATION";
+
+    public static ReactApplicationContext mReactContext;
 
     public CommunicationModule(ReactApplicationContext reactContext) {
         super(reactContext);
@@ -28,7 +35,7 @@ public class CommunicationModule extends ReactContextBaseJavaModule {
      */
     @Override
     public String getName() {
-        return "CommunicationPackage";
+        return "CommunicationModule";
     }
 
     /**
@@ -52,5 +59,20 @@ public class CommunicationModule extends ReactContextBaseJavaModule {
             throw new JSApplicationIllegalArgumentException("打开Activity失败：" + e.getMessage());
         }
     }
+
+    @ReactMethod
+    public void closeActivity() {
+        Log.d(TAG, "closeActivity");
+        ////无法关闭打开的CommunicationActivity
+        //Activity currentActivity = getCurrentActivity();
+        //currentActivity.finish();
+
+
+        ///这种方式就可以关闭当前打开的CommunicationActivity
+        if (CommunicationActivity.mCommunicationActivity != null) {
+            CommunicationActivity.mCommunicationActivity.finish();
+        }
+    }
+
 
 }
