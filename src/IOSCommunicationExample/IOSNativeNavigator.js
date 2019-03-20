@@ -14,6 +14,9 @@ import {
 import IOSCommunicationExample_1 from './IOSCommunicationExample_1';
 import DeviceInfoExample from './DeviceInfo/DeviceInfoExample';
 
+//2019-03-20
+import IOSFaceDetectionExample from './IOSFaceDetection/IOSFaceDetectionExample';
+
 class IOSNativeNavigatorPage extends React.Component {
 
     static navigationOptions = {
@@ -33,6 +36,10 @@ class IOSNativeNavigatorPage extends React.Component {
         dataList.push({
             id: 'DeviceInfoExample',
             name: 'IOS原生平台通信-获取设备信息'
+        });
+        dataList.push({
+            id: 'IOSFaceDetectionExample',
+            name: 'IOS原生平台通信-人脸识别页面'
         });
 
 
@@ -119,7 +126,9 @@ const AnimationStudyNavigator = createStackNavigator(
         DeviceInfoExample: {
             screen: DeviceInfoExample
         },
-
+        IOSFaceDetectionExample: {
+            screen: IOSFaceDetectionExample
+        },
 
     },
     {

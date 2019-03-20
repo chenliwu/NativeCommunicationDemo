@@ -22,7 +22,7 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
-		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
+		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; settings = {ATTRIBUTES = (Required, ); }; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
@@ -38,6 +38,9 @@
 		2DF0FFEE2056DD460020B375 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3EA31DF850E9000B6D8A /* libReact.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		A521BCFE22361F91004ED11A /* IOSDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A521BCFD22361F91004ED11A /* IOSDeviceInfo.m */; };
+		A55C24D822421D37002A3EFC /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 008F07F21AC5B25A0029DE68 /* main.jsbundle */; };
+		A55C250D22421ECE002A3EFC /* IOSFaceDetection.m in Sources */ = {isa = PBXBuildFile; fileRef = A55C24B122421252002A3EFC /* IOSFaceDetection.m */; };
+		A55C251C22422010002A3EFC /* IOSFaceDetectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A55C251B22422010002A3EFC /* IOSFaceDetectionViewController.m */; };
 		A5BFE77C223241E80041D640 /* IOSCommunication.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BFE77B223241E80041D640 /* IOSCommunication.m */; };
 		A5BFE7A622325AA50041D640 /* IOSCommunicationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BFE7A522325AA50041D640 /* IOSCommunicationViewController.m */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
@@ -328,7 +331,7 @@
 		00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTVibration.xcodeproj; path = "../node_modules/react-native/Libraries/Vibration/RCTVibration.xcodeproj"; sourceTree = "<group>"; };
 		00E356EE1AD99517003FC87E /* NativeCommunicationDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NativeCommunicationDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* NativeCommunicationDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NativeCommunicationDemoTests.m; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* NativeCommunicationDemoTests.m */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.c.objc; path = NativeCommunicationDemoTests.m; sourceTree = "<group>"; tabWidth = 4; };
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "../node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
 		139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTWebSocket.xcodeproj; path = "../node_modules/react-native/Libraries/WebSocket/RCTWebSocket.xcodeproj"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* NativeCommunicationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NativeCommunicationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -347,10 +350,14 @@
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		A521BCFC22361F91004ED11A /* IOSDeviceInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IOSDeviceInfo.h; sourceTree = "<group>"; };
 		A521BCFD22361F91004ED11A /* IOSDeviceInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IOSDeviceInfo.m; sourceTree = "<group>"; };
+		A55C24B022421252002A3EFC /* IOSFaceDetection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IOSFaceDetection.h; sourceTree = "<group>"; };
+		A55C24B122421252002A3EFC /* IOSFaceDetection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IOSFaceDetection.m; sourceTree = "<group>"; };
+		A55C251A22422010002A3EFC /* IOSFaceDetectionViewController.h */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.c.h; path = IOSFaceDetectionViewController.h; sourceTree = "<group>"; };
+		A55C251B22422010002A3EFC /* IOSFaceDetectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IOSFaceDetectionViewController.m; sourceTree = "<group>"; };
 		A5BFE77A223241E80041D640 /* IOSCommunication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IOSCommunication.h; path = NativeCommunicationDemo/IOSCommunication.h; sourceTree = "<group>"; };
 		A5BFE77B223241E80041D640 /* IOSCommunication.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = IOSCommunication.m; path = NativeCommunicationDemo/IOSCommunication.m; sourceTree = "<group>"; };
 		A5BFE7A422325AA50041D640 /* IOSCommunicationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IOSCommunicationViewController.h; sourceTree = "<group>"; };
-		A5BFE7A522325AA50041D640 /* IOSCommunicationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IOSCommunicationViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		A5BFE7A522325AA50041D640 /* IOSCommunicationViewController.m */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.c.objc; path = IOSCommunicationViewController.m; sourceTree = "<group>"; tabWidth = 4; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -503,9 +510,15 @@
 				A5BFE7A522325AA50041D640 /* IOSCommunicationViewController.m */,
 				A521BCFC22361F91004ED11A /* IOSDeviceInfo.h */,
 				A521BCFD22361F91004ED11A /* IOSDeviceInfo.m */,
+				A55C24B022421252002A3EFC /* IOSFaceDetection.h */,
+				A55C24B122421252002A3EFC /* IOSFaceDetection.m */,
+				A55C251A22422010002A3EFC /* IOSFaceDetectionViewController.h */,
+				A55C251B22422010002A3EFC /* IOSFaceDetectionViewController.m */,
 			);
+			indentWidth = 4;
 			name = NativeCommunicationDemo;
 			sourceTree = "<group>";
+			tabWidth = 4;
 		};
 		146834001AC3E56700842450 /* Products */ = {
 			isa = PBXGroup;
@@ -1062,6 +1075,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A55C24D822421D37002A3EFC /* main.jsbundle in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 			);
@@ -1097,7 +1111,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
 		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1129,9 +1143,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				A55C251C22422010002A3EFC /* IOSFaceDetectionViewController.m in Sources */,
 				A521BCFE22361F91004ED11A /* IOSDeviceInfo.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 				A5BFE7A622325AA50041D640 /* IOSCommunicationViewController.m in Sources */,
+				A55C250D22421ECE002A3EFC /* IOSFaceDetection.m in Sources */,
 				A5BFE77C223241E80041D640 /* IOSCommunication.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
