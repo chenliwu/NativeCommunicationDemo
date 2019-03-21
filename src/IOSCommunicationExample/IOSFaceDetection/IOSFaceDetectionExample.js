@@ -14,20 +14,6 @@ export default class IOSFaceDetectionExample extends Component {
         super(props, context);
     }
 
-    componentDidMount() {
-        console.log('');
-        console.log('componentDidMount');
-        //添加对IOS原生端的事件监听
-        IOSFaceDetection.addCloseFaceDetectionListener();
-    }
-
-    componentWillUnmount() {
-        console.log('');
-        console.log('componentWillUnmount');
-        //移除IOS原生端的事件监听
-        IOSFaceDetection.removeListener();
-    }
-
     render() {
         return (
             <View style={styles.container}>

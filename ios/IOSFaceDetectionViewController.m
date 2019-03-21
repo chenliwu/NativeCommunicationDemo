@@ -64,8 +64,8 @@
     [self presentViewController:alertController animated:YES completion:nil];
 }
 
-// viewWillDisappare
-- (void)viewWillDisappare{
+// viewWillDisappare   在视图变换时，当前视图在即将被移除、或者被覆盖时，会调用这个方法进行一些善后的处理和设置。
+- (void)viewWillDisappear:(BOOL)animated{
     [self.faceDetection sendEventWithName:@"onCloseFaceDetection" body:@{}];
 }
 
@@ -84,7 +84,7 @@
         // 人脸登录回调
         [self.faceDetection sendEventWithName:@"onFaceLogin" body:@{@"faceBase64":@"人脸登录-人脸数据"}];
     }else if(self.type == TYPE_FACE_COLLECTION){
-         [self.faceDetection sendEventWithName:@"onFaceCollection" body:@{@"faceBase64":@"人脸采集-人脸数据"}];
+        [self.faceDetection sendEventWithName:@"onFaceCollection" body:@{@"faceBase64":@"人脸采集-人脸数据"}];
     }
 }
 

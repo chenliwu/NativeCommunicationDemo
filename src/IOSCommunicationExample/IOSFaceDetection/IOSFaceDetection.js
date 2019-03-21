@@ -20,6 +20,7 @@ export default class IOSFaceDetection {
      */
     static jumpFaceLoginPage = (callback) => {
         IOSFaceDetectionListener.addFaceLoginListener(callback);
+        IOSFaceDetectionListener.addCloseFaceDetectionListener();
         NativeModules.IOSFaceDetection.presentfFaceDetectionViewController(IOSFaceDetection.TYPE_FACE_LOGIN);
     };
 
@@ -29,24 +30,13 @@ export default class IOSFaceDetection {
      */
     static jumpFaceCollectionPage = (callback) => {
         IOSFaceDetectionListener.addFaceCollectionListener(callback);
+        IOSFaceDetectionListener.addCloseFaceDetectionListener();
         NativeModules.IOSFaceDetection.presentfFaceDetectionViewController(IOSFaceDetection.TYPE_FACE_COLLECTION);
     };
-
-
-    static addCloseFaceDetectionListener = () => {
-        IOSFaceDetectionListener.addCloseFaceDetectionListener();
-    };
-
-    static removeListener = () => {
-        //取消监听IOS原生发送的事件
-        IOSFaceDetectionListener.removeAllListener();
-    };
-
-
 }
 
 /**
- * 封装内部事件监听细节
+ * RN与IOS原生平台的通信细节封装在内部，只提供业务方法给外部调用。
  */
 class IOSFaceDetectionListener {
 
@@ -68,6 +58,8 @@ class IOSFaceDetectionListener {
     ///人脸登录
     static addFaceLoginListener = (callback) => {
         if (!IOSFaceDetectionListener.faceLoginCallback) {
+            console.log('');
+            console.log('addFaceLoginListener');
             IOSFaceDetectionListener.faceLoginCallback = callback;
             //监听IOS原生端发送的事件
             IOSFaceDetectionListener.faceLoginSubscription = IOSFaceDetectionEmitter.addListener(
@@ -87,6 +79,8 @@ class IOSFaceDetectionListener {
     ///人脸采集
     static addFaceCollectionListener = (callback) => {
         if (!IOSFaceDetectionListener.faceCollectionCallback) {
+            console.log('');
+            console.log('addFaceCollectionListener');
             IOSFaceDetectionListener.faceCollectionCallback = callback;
             //监听IOS原生端发送的事件
             IOSFaceDetectionListener.faceCollectionSubscription = IOSFaceDetectionEmitter.addListener(
@@ -105,33 +99,38 @@ class IOSFaceDetectionListener {
 
 
     static addCloseFaceDetectionListener = () => {
-        //监听IOS原生端发送的事件
-        IOSFaceDetectionListener.closeFaceDetectionSubscription = IOSFaceDetectionEmitter.addListener(
-            IOSFaceDetectionListener.CLOSE_FACE_DETECTION_CALLBACK_NAME,
-            IOSFaceDetectionListener.onCloseFaceDetection
-        );
+        if (!IOSFaceDetectionListener.closeFaceDetectionSubscription) {
+            console.log('');
+            console.log('addCloseFaceDetectionListener');
+            //监听IOS原生端发送的事件
+            IOSFaceDetectionListener.closeFaceDetectionSubscription = IOSFaceDetectionEmitter.addListener(
+                IOSFaceDetectionListener.CLOSE_FACE_DETECTION_CALLBACK_NAME,
+                IOSFaceDetectionListener.onCloseFaceDetection
+            );
+        }
     };
     /**
-     * 从IOS原生端关闭人脸识别界面时，要移除相关监听
+     * 从IOS原生端关闭人脸识别界面时，要移除相关监听。这个通过IOS原生页面生命周期方法实现。
      */
-    static onCloseFaceDetection = () => {
+    static onCloseFaceDetection = (params) => {
         console.log('');
         console.log('onCloseFaceDetection');
+        console.log(params);
         IOSFaceDetectionListener.removeAllListener();
     };
 
     static removeAllListener = () => {
-        if(IOSFaceDetectionListener.faceLoginSubscription){
+        if (IOSFaceDetectionListener.faceLoginSubscription) {
             IOSFaceDetectionListener.faceLoginSubscription.remove();
             IOSFaceDetectionListener.faceLoginSubscription = null;
             IOSFaceDetectionListener.faceLoginCallback = null;
         }
-        if(IOSFaceDetectionListener.faceCollectionSubscription){
+        if (IOSFaceDetectionListener.faceCollectionSubscription) {
             IOSFaceDetectionListener.faceCollectionSubscription.remove();
             IOSFaceDetectionListener.faceCollectionSubscription = null;
             IOSFaceDetectionListener.faceCollectionCallback = null;
         }
-        if(IOSFaceDetectionListener.closeFaceDetectionSubscription){
+        if (IOSFaceDetectionListener.closeFaceDetectionSubscription) {
             IOSFaceDetectionListener.closeFaceDetectionSubscription.remove();
             IOSFaceDetectionListener.closeFaceDetectionSubscription = null;
         }
