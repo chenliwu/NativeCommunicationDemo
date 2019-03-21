@@ -54,6 +54,10 @@ class IOSFaceDetectionListener {
     static FACE_COLLECTION_CALLBACK_NAME = 'onFaceCollection';      //人脸采集回调方法名称
     static CLOSE_FACE_DETECTION_CALLBACK_NAME = 'onCloseFaceDetection';      //关闭IOS人脸识别模块回调方法名称
 
+    /**
+     * 不赋值null，则static成员的初始值是undefine
+     * @type {null}
+     */
     static faceLoginCallback;
     static faceCollectionCallback;
 
@@ -120,10 +124,12 @@ class IOSFaceDetectionListener {
         if(IOSFaceDetectionListener.faceLoginSubscription){
             IOSFaceDetectionListener.faceLoginSubscription.remove();
             IOSFaceDetectionListener.faceLoginSubscription = null;
+            IOSFaceDetectionListener.faceLoginCallback = null;
         }
         if(IOSFaceDetectionListener.faceCollectionSubscription){
             IOSFaceDetectionListener.faceCollectionSubscription.remove();
             IOSFaceDetectionListener.faceCollectionSubscription = null;
+            IOSFaceDetectionListener.faceCollectionCallback = null;
         }
         if(IOSFaceDetectionListener.closeFaceDetectionSubscription){
             IOSFaceDetectionListener.closeFaceDetectionSubscription.remove();

@@ -76,8 +76,10 @@
 
 // 发送事件到RN
 - (void)sendEventToReactNative{
+    // 不能通过实例化新的对象来发送事件到RN，这样会出错。
     //IOSFaceDetection *faceDetection = [IOSFaceDetection new];
     //[faceDetection sendEventWithName:@"onFaceLogin" body:@{@"faceBase64":@"人脸数据"}];
+    
     if(self.type == TYPE_FACE_LOGIN){
         // 人脸登录回调
         [self.faceDetection sendEventWithName:@"onFaceLogin" body:@{@"faceBase64":@"人脸登录-人脸数据"}];

@@ -35,6 +35,7 @@ RCT_EXPORT_METHOD(presentfFaceDetectionViewController:(int)type){
     IOSFaceDetectionViewController *faceDetectionViewController = [IOSFaceDetectionViewController new];
     //参数赋值
     faceDetectionViewController.type = type;
+    //记录faceDetection，用于向RN发送事件
     faceDetectionViewController.faceDetection = self;
     AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     //  UIViewController *rootViewController = (UIViewController *)[[app.window] rootViewController];
