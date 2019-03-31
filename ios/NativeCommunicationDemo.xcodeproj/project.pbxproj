@@ -38,9 +38,9 @@
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		A521BCFE22361F91004ED11A /* IOSDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A521BCFD22361F91004ED11A /* IOSDeviceInfo.m */; };
 		A54098FE2243249200CB90E5 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
-		A55C24D822421D37002A3EFC /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 008F07F21AC5B25A0029DE68 /* main.jsbundle */; };
 		A55C250D22421ECE002A3EFC /* IOSFaceDetection.m in Sources */ = {isa = PBXBuildFile; fileRef = A55C24B122421252002A3EFC /* IOSFaceDetection.m */; };
 		A55C251C22422010002A3EFC /* IOSFaceDetectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A55C251B22422010002A3EFC /* IOSFaceDetectionViewController.m */; };
+		A55E971F224E1F5200B82877 /* libRNMydialog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A55E96F5224E1D1700B82877 /* libRNMydialog.a */; };
 		A5BFE77C223241E80041D640 /* IOSCommunication.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BFE77B223241E80041D640 /* IOSCommunication.m */; };
 		A5BFE7A622325AA50041D640 /* IOSCommunicationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BFE7A522325AA50041D640 /* IOSCommunicationViewController.m */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
@@ -313,6 +313,13 @@
 			remoteGlobalIDString = 58B5119B1A9E6C1200147676;
 			remoteInfo = RCTText;
 		};
+		A55E96F4224E1D1700B82877 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A55E96F0224E1D1700B82877 /* RNMydialog.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RNMydialog;
+		};
 		ADBDB9261DFEBF0700ED6528 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */;
@@ -323,7 +330,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
 		00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTActionSheet.xcodeproj; path = "../node_modules/react-native/Libraries/ActionSheetIOS/RCTActionSheet.xcodeproj"; sourceTree = "<group>"; };
 		00C302B51ABCB90400DB3ED1 /* RCTGeolocation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTGeolocation.xcodeproj; path = "../node_modules/react-native/Libraries/Geolocation/RCTGeolocation.xcodeproj"; sourceTree = "<group>"; };
 		00C302BB1ABCB91800DB3ED1 /* RCTImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTImage.xcodeproj; path = "../node_modules/react-native/Libraries/Image/RCTImage.xcodeproj"; sourceTree = "<group>"; };
@@ -354,6 +360,7 @@
 		A55C24B122421252002A3EFC /* IOSFaceDetection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IOSFaceDetection.m; sourceTree = "<group>"; };
 		A55C251A22422010002A3EFC /* IOSFaceDetectionViewController.h */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.c.h; path = IOSFaceDetectionViewController.h; sourceTree = "<group>"; };
 		A55C251B22422010002A3EFC /* IOSFaceDetectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IOSFaceDetectionViewController.m; sourceTree = "<group>"; };
+		A55E96F0224E1D1700B82877 /* RNMydialog.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNMydialog.xcodeproj; path = "../node_modules/react-native-mydialog/ios/RNMydialog.xcodeproj"; sourceTree = "<group>"; };
 		A5BFE77A223241E80041D640 /* IOSCommunication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IOSCommunication.h; path = NativeCommunicationDemo/IOSCommunication.h; sourceTree = "<group>"; };
 		A5BFE77B223241E80041D640 /* IOSCommunication.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = IOSCommunication.m; path = NativeCommunicationDemo/IOSCommunication.m; sourceTree = "<group>"; };
 		A5BFE7A422325AA50041D640 /* IOSCommunicationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IOSCommunicationViewController.h; sourceTree = "<group>"; };
@@ -374,6 +381,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A55E971F224E1F5200B82877 /* libRNMydialog.a in Frameworks */,
 				A54098FE2243249200CB90E5 /* libReact.a in Frameworks */,
 				ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */,
 				11D1A2F320CAFA9E000508D9 /* libRCTAnimation.a in Frameworks */,
@@ -497,7 +505,6 @@
 		13B07FAE1A68108700A75B9A /* NativeCommunicationDemo */ = {
 			isa = PBXGroup;
 			children = (
-				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -572,6 +579,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				A55E96F0224E1D1700B82877 /* RNMydialog.xcodeproj */,
 				5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
@@ -618,6 +626,14 @@
 				00E356EE1AD99517003FC87E /* NativeCommunicationDemoTests.xctest */,
 				2D02E47B1E0B4A5D006451C7 /* NativeCommunicationDemo-tvOS.app */,
 				2D02E4901E0B4A5D006451C7 /* NativeCommunicationDemo-tvOSTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A55E96F1224E1D1700B82877 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A55E96F5224E1D1700B82877 /* libRNMydialog.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -789,6 +805,10 @@
 				{
 					ProductGroup = 146834001AC3E56700842450 /* Products */;
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+				},
+				{
+					ProductGroup = A55E96F1224E1D1700B82877 /* Products */;
+					ProjectRef = A55E96F0224E1D1700B82877 /* RNMydialog.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -1054,6 +1074,13 @@
 			remoteRef = 832341B41AAA6A8300B99B32 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		A55E96F5224E1D1700B82877 /* libRNMydialog.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNMydialog.a;
+			remoteRef = A55E96F4224E1D1700B82877 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1075,7 +1102,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A55C24D822421D37002A3EFC /* main.jsbundle in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 			);
