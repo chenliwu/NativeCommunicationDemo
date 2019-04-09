@@ -4,7 +4,8 @@ import {
     StyleSheet,
     Text,
     Platform,
-    Dimensions
+    Dimensions,
+    DeviceEventEmitter
 } from 'react-native';
 
 const screenWidth = Dimensions.get('window').width;
@@ -26,17 +27,31 @@ export default class FaceDetectionViewGroupExample extends Component {
         super(props, context);
     }
 
+
+
     render() {
 
         return (
             <View style={styles.container}>
-                <FaceDetectionViewGroup style={{
-                    flex:1,
-                    width:screenWidth,
-                    //height:300,
-                    backgroundColor:'green'
-                }}>
-                </FaceDetectionViewGroup>
+                <FaceDetectionViewGroup
+                    style={{
+                        flex: 1,
+                        width: screenWidth,
+                        //height:300,
+                        backgroundColor: 'green'
+                    }}
+                    type={'FaceLogin'}
+                    onFaceLogin={(event)=>{
+                        console.log('');
+                        console.log('onFaceLogin');
+                        console.log(event.nativeEvent);
+                    }}
+                    onFaceCollection={(event)=>{
+                        console.log('');
+                        console.log('onFaceCollection');
+                        console.log(event.nativeEvent);
+                    }}
+                />
             </View>
         )
     }

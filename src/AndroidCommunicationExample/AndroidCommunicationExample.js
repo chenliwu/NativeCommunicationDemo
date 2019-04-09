@@ -41,9 +41,6 @@ export default class AndroidCommunicationExample extends Component {
         )
     }
 
-    componentWillUnmount(): void {
-        DeviceEventEmitter.removeListener("onCloseActivity",this.onCloseActivity);
-    }
 
 
 }

@@ -4,10 +4,25 @@ import PropTypes from 'prop-types';
 import {
     requireNativeComponent,
     View,
+    DeviceEventEmitter
 } from 'react-native';
 
-const FaceDetectionViewGroup = requireNativeComponent('FaceDetectionViewGroup', FaceDetectionViewGroupComponent
-    , {nativeOnly: {onChange: true}});
+const config = {
+    name: "FaceDetectionViewGroup",
+
+    propTypes: {
+        "type": PropTypes.string,
+        "onFaceLogin": PropTypes.func,
+        "onFaceCollection": PropTypes.func,
+        ...View.propTypes
+    }
+};
+
+// const FaceDetectionViewGroup = requireNativeComponent('FaceDetectionViewGroup', FaceDetectionViewGroupComponent
+//     , {nativeOnly: {onFaceLogin: true, onFaceCollection: true}});
+
+const FaceDetectionViewGroup = requireNativeComponent('FaceDetectionViewGroup', config
+    , {nativeOnly: {onFaceLogin: true, onFaceCollection: true}});
 
 //对封装的组件进行二次封装
 class FaceDetectionViewGroupComponent extends Component {
@@ -16,14 +31,63 @@ class FaceDetectionViewGroupComponent extends Component {
         super(props);
     }
 
+    onFaceLoginListener;
+    onFaceCollectionListener;
+
+    componentWillMount(): void {
+        if(this.props.type === 'FaceLogin'){
+            this.onFaceLoginListener = DeviceEventEmitter.addListener("onFaceLogin",this.onFaceLogin);
+        }else if(this.props.type === 'FaceCollection'){
+            this.onFaceCollectionListener = DeviceEventEmitter.addListener("onFaceCollection",this.onFaceCollection);
+        }
+
+    }
+
+    componentWillUnmount(): void {
+       if(this.onFaceLoginListener){
+           this.onFaceLoginListener.remove();
+       }
+       if(this.onFaceCollectionListener){
+           this.onFaceCollectionListener.remove();
+       }
+    }
+
+
+    /**
+     * 人脸登录回调方法，在这里处理回调的参数
+     * @param event
+     */
+    onFaceLogin = (event) => {
+        console.log('');
+        console.log('onFaceLogin');
+        console.log(event);
+        console.log(event.nativeEvent);
+    };
+
+    /**
+     * 人脸采集回调方法，在这里处理回调的参数
+     * @param event
+     */
+    onFaceCollection = (event) => {
+        console.log('');
+        console.log('onFaceCollection');
+        console.log(event);
+        console.log(event.nativeEvent);
+    };
+
     render() {
         return <FaceDetectionViewGroup
+            //onFaceLogin={this.onFaceLogin}
+            //onFaceCollection={this.onFaceCollection}
             {...this.props}
         />
     }
 }
 
 FaceDetectionViewGroupComponent.propTypes = {
+    type: PropTypes.string,
+    onFaceLogin: PropTypes.func,
+    onFaceCollection: PropTypes.func,
     ...View.propTypes,
 };
 
