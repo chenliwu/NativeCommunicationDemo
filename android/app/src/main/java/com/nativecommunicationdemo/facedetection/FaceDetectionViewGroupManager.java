@@ -11,12 +11,15 @@ import android.widget.TextView;
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.bridge.WritableMap;
+import com.facebook.react.common.MapBuilder;
 import com.facebook.react.modules.core.DeviceEventManagerModule;
 import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.ViewGroupManager;
 import com.facebook.react.uimanager.annotations.ReactProp;
 import com.facebook.react.uimanager.events.RCTEventEmitter;
 import com.nativecommunicationdemo.R;
+
+import java.util.Map;
 
 /**
  * 2019-02-15
@@ -71,27 +74,41 @@ public class FaceDetectionViewGroupManager extends ViewGroupManager<RelativeLayo
                 if ("FaceLogin".equals(type)) {
                     data.putString("msg", "人脸登录");
                     //Android向JS传递事件
-//                    context.getJSModule(RCTEventEmitter.class).receiveEvent(
-//                            rootView.getId(),
-//                            "onFaceLogin",
-//                            data
-//                    );
-                    sendEventToReactNative(reactContext,"onFaceLogin",data);
+                    context.getJSModule(RCTEventEmitter.class).receiveEvent(
+                            rootView.getId(),
+                            "onFaceLogin",
+                            data
+                    );
+                    //sendEventToReactNative(reactContext,"onFaceLogin",data);
                 } else if ("FaceCollection".equals(type)) {
                     data.putString("msg", "人脸采集");
                     //Android向JS传递事件
-//                    context.getJSModule(RCTEventEmitter.class).receiveEvent(
-//                            rootView.getId(),
-//                            "onFaceCollection",
-//                            data
-//                    );
-                    sendEventToReactNative(reactContext,"onFaceCollection",data);
+                    context.getJSModule(RCTEventEmitter.class).receiveEvent(
+                            rootView.getId(),
+                            "onFaceCollection",
+                            data
+                    );
+                    //sendEventToReactNative(reactContext,"onFaceCollection",data);
                 }
 
             }
         });
 
         return rootView;
+    }
+
+    /**
+     * 暴露了在JS中定义的方法，实现JS与原生端的事件调用
+     * @return
+     */
+    @javax.annotation.Nullable
+    @Override
+    public Map getExportedCustomDirectEventTypeConstants() {
+        ///put  k是java端发送事件的名称，v1是RN端回调事件的名称
+        return MapBuilder.<String, Object>builder()
+                .put("onFaceLogin", MapBuilder.of("registrationName", "onFaceLogin"))
+                .put("onFaceCollection", MapBuilder.of("registrationName", "onFaceCollection"))
+                .build();
     }
 
     /**

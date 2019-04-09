@@ -38,18 +38,23 @@ export default class FaceDetectionViewGroupExample extends Component {
                         flex: 1,
                         width: screenWidth,
                         //height:300,
-                        backgroundColor: 'green'
+                        backgroundColor: 'rgba(0,0,0,0.5)'
                     }}
-                    type={'FaceLogin'}
+                    //type={'FaceLogin'}
+                    type={'FaceCollection'}
                     onFaceLogin={(event)=>{
                         console.log('');
-                        console.log('onFaceLogin');
+                        console.log('FaceDetectionViewGroupExample.onFaceLogin');
+                        console.log(event);
                         console.log(event.nativeEvent);
+                        alert(event.nativeEvent.msg);
                     }}
                     onFaceCollection={(event)=>{
                         console.log('');
-                        console.log('onFaceCollection');
+                        console.log('FaceDetectionViewGroupExample.onFaceCollection');
+                        console.log(event);
                         console.log(event.nativeEvent);
+                        alert(event.nativeEvent.msg);
                     }}
                 />
             </View>

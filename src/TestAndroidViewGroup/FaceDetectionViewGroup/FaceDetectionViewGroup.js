@@ -7,22 +7,8 @@ import {
     DeviceEventEmitter
 } from 'react-native';
 
-const config = {
-    name: "FaceDetectionViewGroup",
-
-    propTypes: {
-        "type": PropTypes.string,
-        "onFaceLogin": PropTypes.func,
-        "onFaceCollection": PropTypes.func,
-        ...View.propTypes
-    }
-};
-
-// const FaceDetectionViewGroup = requireNativeComponent('FaceDetectionViewGroup', FaceDetectionViewGroupComponent
-//     , {nativeOnly: {onFaceLogin: true, onFaceCollection: true}});
-
-const FaceDetectionViewGroup = requireNativeComponent('FaceDetectionViewGroup', config
-    , {nativeOnly: {onFaceLogin: true, onFaceCollection: true}});
+const FaceDetectionViewGroup = requireNativeComponent('FaceDetectionViewGroup', FaceDetectionViewGroupComponent
+    , {nativeOnly: {}});
 
 //对封装的组件进行二次封装
 class FaceDetectionViewGroupComponent extends Component {
@@ -52,33 +38,33 @@ class FaceDetectionViewGroupComponent extends Component {
        }
     }
 
-
-    /**
-     * 人脸登录回调方法，在这里处理回调的参数
-     * @param event
-     */
-    onFaceLogin = (event) => {
-        console.log('');
-        console.log('onFaceLogin');
-        console.log(event);
-        console.log(event.nativeEvent);
-    };
-
-    /**
-     * 人脸采集回调方法，在这里处理回调的参数
-     * @param event
-     */
-    onFaceCollection = (event) => {
-        console.log('');
-        console.log('onFaceCollection');
-        console.log(event);
-        console.log(event.nativeEvent);
-    };
+    //
+    // /**
+    //  * 人脸登录回调方法，在这里处理回调的参数
+    //  * @param event
+    //  */
+    // onFaceLogin = (event) => {
+    //     console.log('');
+    //     console.log('onFaceLogin');
+    //     console.log(event);
+    //     console.log(event.nativeEvent);
+    //    // this.props.onFaceLogin && this.props.onFaceLogin(event);
+    // };
+    //
+    // /**
+    //  * 人脸采集回调方法，在这里处理回调的参数
+    //  * @param event
+    //  */
+    // onFaceCollection = (event) => {
+    //     console.log('');
+    //     console.log('onFaceCollection');
+    //     console.log(event);
+    //     console.log(event.nativeEvent);
+    //     //this.props.onFaceCollection && this.props.onFaceCollection(event);
+    // };
 
     render() {
         return <FaceDetectionViewGroup
-            //onFaceLogin={this.onFaceLogin}
-            //onFaceCollection={this.onFaceCollection}
             {...this.props}
         />
     }
@@ -93,4 +79,3 @@ FaceDetectionViewGroupComponent.propTypes = {
 
 //导出二次封装的组件
 module.exports = FaceDetectionViewGroupComponent;
-//module.exports = FaceDetectionViewGroupComponent;
