@@ -16,6 +16,8 @@ import AndroidCommunicationExample from './AndroidCommunicationExample/AndroidCo
 
 import IOSNativeNavigator from './IOSCommunicationExample/IOSNativeNavigator';
 
+import AndroidViewGroupNavigator from './TestAndroidViewGroup/AndroidViewGroupNavigator';
+
 
 class AppNavigatorPage extends Component {
 
@@ -66,6 +68,12 @@ export default createDrawerNavigator(
             screen: AndroidCommunicationExample,
             navigationOptions: {
                 drawerLabel: "Android与RN页面跳转",
+            }
+        },
+        AndroidViewGroupNavigator: {
+            screen: AndroidViewGroupNavigator,
+            navigationOptions: {
+                drawerLabel: "Android封装布局组件导出到RN",
             }
         },
         IOSNativeNavigator: {
