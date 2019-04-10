@@ -18,6 +18,9 @@ import IOSNativeNavigator from './IOSCommunicationExample/IOSNativeNavigator';
 
 import AndroidViewGroupNavigator from './TestAndroidViewGroup/AndroidViewGroupNavigator';
 
+//2019-04-10 封装IOS原生组件
+import TestIOSNativeNavigator from './TestIOSNativeComponent/TestIOSNativeNavigator';
+
 
 class AppNavigatorPage extends Component {
 
@@ -80,6 +83,12 @@ export default createDrawerNavigator(
             screen: IOSNativeNavigator,
             navigationOptions: {
                 drawerLabel: "IOS平台通信",
+            }
+        },
+        TestIOSNativeNavigator: {
+            screen: TestIOSNativeNavigator,
+            navigationOptions: {
+                drawerLabel: "封装IOS原生组件",
             }
         },
 

@@ -43,17 +43,17 @@ export default class FaceDetectionViewGroupExample extends Component {
                     //type={'FaceLogin'}
                     type={'FaceCollection'}
                     onFaceLogin={(event)=>{
-                        console.log('');
-                        console.log('FaceDetectionViewGroupExample.onFaceLogin');
-                        console.log(event);
-                        console.log(event.nativeEvent);
+                        // console.log('');
+                        // console.log('FaceDetectionViewGroupExample.onFaceLogin');
+                        // console.log(event);
+                        // console.log(event.nativeEvent);
                         alert(event.nativeEvent.msg);
                     }}
                     onFaceCollection={(event)=>{
-                        console.log('');
-                        console.log('FaceDetectionViewGroupExample.onFaceCollection');
-                        console.log(event);
-                        console.log(event.nativeEvent);
+                        // console.log('');
+                        // console.log('FaceDetectionViewGroupExample.onFaceCollection');
+                        // console.log(event);
+                        // console.log(event.nativeEvent);
                         alert(event.nativeEvent.msg);
                     }}
                 />

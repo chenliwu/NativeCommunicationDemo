@@ -41,6 +41,8 @@
 		A55C250D22421ECE002A3EFC /* IOSFaceDetection.m in Sources */ = {isa = PBXBuildFile; fileRef = A55C24B122421252002A3EFC /* IOSFaceDetection.m */; };
 		A55C251C22422010002A3EFC /* IOSFaceDetectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A55C251B22422010002A3EFC /* IOSFaceDetectionViewController.m */; };
 		A55E971F224E1F5200B82877 /* libRNMydialog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A55E96F5224E1D1700B82877 /* libRNMydialog.a */; };
+		A5694968225DD4BE004C2B02 /* TestReactNativeView.m in Sources */ = {isa = PBXBuildFile; fileRef = A5694967225DD4BE004C2B02 /* TestReactNativeView.m */; };
+		A569496B225DD55B004C2B02 /* TestReactNativeViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A569496A225DD55B004C2B02 /* TestReactNativeViewManager.m */; };
 		A5BFE77C223241E80041D640 /* IOSCommunication.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BFE77B223241E80041D640 /* IOSCommunication.m */; };
 		A5BFE7A622325AA50041D640 /* IOSCommunicationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BFE7A522325AA50041D640 /* IOSCommunicationViewController.m */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
@@ -361,6 +363,10 @@
 		A55C251A22422010002A3EFC /* IOSFaceDetectionViewController.h */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.c.h; path = IOSFaceDetectionViewController.h; sourceTree = "<group>"; };
 		A55C251B22422010002A3EFC /* IOSFaceDetectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IOSFaceDetectionViewController.m; sourceTree = "<group>"; };
 		A55E96F0224E1D1700B82877 /* RNMydialog.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNMydialog.xcodeproj; path = "../node_modules/react-native-mydialog/ios/RNMydialog.xcodeproj"; sourceTree = "<group>"; };
+		A5694966225DD4BE004C2B02 /* TestReactNativeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestReactNativeView.h; sourceTree = "<group>"; };
+		A5694967225DD4BE004C2B02 /* TestReactNativeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestReactNativeView.m; sourceTree = "<group>"; };
+		A5694969225DD55B004C2B02 /* TestReactNativeViewManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestReactNativeViewManager.h; sourceTree = "<group>"; };
+		A569496A225DD55B004C2B02 /* TestReactNativeViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestReactNativeViewManager.m; sourceTree = "<group>"; };
 		A5BFE77A223241E80041D640 /* IOSCommunication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IOSCommunication.h; path = NativeCommunicationDemo/IOSCommunication.h; sourceTree = "<group>"; };
 		A5BFE77B223241E80041D640 /* IOSCommunication.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = IOSCommunication.m; path = NativeCommunicationDemo/IOSCommunication.m; sourceTree = "<group>"; };
 		A5BFE7A422325AA50041D640 /* IOSCommunicationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IOSCommunicationViewController.h; sourceTree = "<group>"; };
@@ -505,6 +511,7 @@
 		13B07FAE1A68108700A75B9A /* NativeCommunicationDemo */ = {
 			isa = PBXGroup;
 			children = (
+				A5694965225DD404004C2B02 /* ReactNativeComponents */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -636,6 +643,17 @@
 				A55E96F5224E1D1700B82877 /* libRNMydialog.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		A5694965225DD404004C2B02 /* ReactNativeComponents */ = {
+			isa = PBXGroup;
+			children = (
+				A5694966225DD4BE004C2B02 /* TestReactNativeView.h */,
+				A5694967225DD4BE004C2B02 /* TestReactNativeView.m */,
+				A5694969225DD55B004C2B02 /* TestReactNativeViewManager.h */,
+				A569496A225DD55B004C2B02 /* TestReactNativeViewManager.m */,
+			);
+			path = ReactNativeComponents;
 			sourceTree = "<group>";
 		};
 		ADBDB9201DFEBF0600ED6528 /* Products */ = {
@@ -1169,12 +1187,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				A5694968225DD4BE004C2B02 /* TestReactNativeView.m in Sources */,
 				A55C251C22422010002A3EFC /* IOSFaceDetectionViewController.m in Sources */,
 				A521BCFE22361F91004ED11A /* IOSDeviceInfo.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 				A5BFE7A622325AA50041D640 /* IOSCommunicationViewController.m in Sources */,
 				A55C250D22421ECE002A3EFC /* IOSFaceDetection.m in Sources */,
 				A5BFE77C223241E80041D640 /* IOSCommunication.m in Sources */,
+				A569496B225DD55B004C2B02 /* TestReactNativeViewManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
