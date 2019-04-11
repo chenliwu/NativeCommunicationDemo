@@ -2,7 +2,7 @@
 //  TestReactNativeViewManager.h
 //  NativeCommunicationDemo
 //
-//  Created by bytter on 2019/4/10.
+//  Created by chenlw on 2019/4/10.
 //  Copyright © 2019 Facebook. All rights reserved.
 //
 

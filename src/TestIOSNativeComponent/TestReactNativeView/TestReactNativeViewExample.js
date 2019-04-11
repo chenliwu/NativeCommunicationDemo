@@ -27,6 +27,7 @@ export default class TestReactNativeViewExample extends Component {
                         flex: 1,
                         width: screenWidth,
                     }}
+                    type={'type from react-native'}
                 />
             </View>
         )

@@ -18,12 +18,13 @@ class TestReactNativeViewComponent extends Component {
 
     render() {
         return (
-            <TestReactNativeView{...this.props}/>
+            <TestReactNativeView {...this.props}/>
         );
     }
 }
 
 TestReactNativeViewComponent.propTypes = {
+    type: PropTypes.string,
     ...View.propTypes,
 };
 
