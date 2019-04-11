@@ -16,15 +16,34 @@ class TestReactNativeViewComponent extends Component {
         super(props);
     }
 
+    /**
+     * 对IOS组件的事件进行处理，解析对RN端有用的参数
+     * @param event
+     * @private
+     */
+    _onFaceDetection = (event) => {
+        if (!this.props.onFaceDetection) {
+            return;
+        }
+        console.log('');
+        console.log('_onFaceDetection');
+        console.log(event.nativeEvent);
+        this.props.onFaceDetection(event.nativeEvent.faceBase64);
+    };
+
     render() {
         return (
-            <TestReactNativeView {...this.props}/>
+            <TestReactNativeView
+                {...this.props}
+                onFaceDetection={this._onFaceDetection}
+            />
         );
     }
 }
 
 TestReactNativeViewComponent.propTypes = {
     type: PropTypes.string,
+    onFaceDetection: PropTypes.func,
     ...View.propTypes,
 };
 

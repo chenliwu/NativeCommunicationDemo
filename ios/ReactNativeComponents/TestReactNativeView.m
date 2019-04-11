@@ -28,7 +28,7 @@
     }
     
     //创建一个文本组件
-    UITextView *textView = [[UITextView alloc] initWithFrame:CGRectMake(20,20,300,60)];
+    UITextView *textView = [[UITextView alloc] initWithFrame:CGRectMake(20,20,300,40)];
     //设置文字
     textView.text = @"IOS原生组件";
     //设置字体大小
@@ -37,6 +37,20 @@
     [self addSubview:textView];
     
     self.textView = textView;
+    
+    //创建一个按钮组件
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+    button.frame = CGRectMake(20, 80, 100, 40);
+    [button setTitle:@"发送事件到RN" forState:UIControlStateNormal];
+//    [button addTarget:self action:@selector(sendEventToReactNative) forControlEvents:UIViewNoIntrinsicMetric];
+    /**
+     * addTarget:目标（让谁做这个事情）
+     * action:方法（做什么事情-->方法）
+     * forControlEvents:事件
+     */
+    [button addTarget:self action:@selector(sendEventToReactNative:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:button];
+    //[self bringSubviewToFront:button];
     
     return self;
 }
@@ -47,5 +61,13 @@
     self.textView.text = type;
     //self.type = type;
 }
+
+//按钮的响应事件
+- (void)sendEventToReactNative:(UIButton *)button{
+    NSLog(@"sendEventToReactNative");
+    //往RN端发送事件
+    self.onFaceDetection(@{@"faceBase64":@"IOS原生端回传的数据"});
+}
+
 
 @end

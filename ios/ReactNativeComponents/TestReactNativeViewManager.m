@@ -18,6 +18,9 @@ RCT_EXPORT_MODULE()
 //导出RN组件的属性
 RCT_EXPORT_VIEW_PROPERTY(type, NSString)
 
+//导出RN组件的事件
+RCT_EXPORT_VIEW_PROPERTY(onFaceDetection, RCTBubblingEventBlock)
+
 - (UIView *)view
 {
     //创建组件实例

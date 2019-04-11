@@ -28,6 +28,12 @@ export default class TestReactNativeViewExample extends Component {
                         width: screenWidth,
                     }}
                     type={'type from react-native'}
+                    onFaceDetection={(faceBase64) => {
+                        console.log('');
+                        console.log('TestReactNativeViewExample.TestReactNativeView');
+                        console.log(faceBase64);
+                        alert('RN端接收到IOS原生端发送的事件：'+faceBase64);
+                    }}
                 />
             </View>
         )

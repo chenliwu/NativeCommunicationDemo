@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "React/RCTComponent.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,6 +18,9 @@ NS_ASSUME_NONNULL_BEGIN
 //如果使用assign会导致线程锁死，使用weak弱引用就没有问题
 //@property(nonatomic,assign) UITextView *textView;
 @property(nonatomic,weak) UITextView *textView;
+
+// 声明一个事件属性，导出给RN端使用
+@property(nonatomic, copy) RCTBubblingEventBlock onFaceDetection;
 
 @end
 
